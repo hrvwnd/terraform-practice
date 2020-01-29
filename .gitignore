@@ -1,0 +1,9 @@
+.terraform
+*.terraform
+.vscode
+**/.terraform/*
+.intelliJ
+
+terraform.tfstate
+
+terraform.tfstate.*
