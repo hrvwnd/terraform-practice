@@ -5,8 +5,17 @@ provider "aws" {
 }
 
 resource "aws_instance" "EC2" {
-  ami           = "ami-0be057a22c63962cb"
-  instance_type = "t2.micro"
-  key_name      = "example"
+  ami           = var.ami-id
+  instance_type = var.instance-type
+  key_name      = var.pem-key
+
 }
 
+resource "aws_s3_bucket" "b" {
+	bucket = "an-s3-bucket-23u8489234"
+	acl = "private"
+	tags = {
+		Name = "an-s3-bucket"
+		Environment = "Dev"
+	}
+}
