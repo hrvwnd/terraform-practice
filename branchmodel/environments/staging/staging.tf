@@ -16,6 +16,7 @@ variable "ami_id" {
 provider "aws" {
     region = var.region
     version = "~> 2.7"
+    shared_credentials_file = "~/.aws/credential"
     access_key = var.access_key
     secret_key = var.secret_key
 }
