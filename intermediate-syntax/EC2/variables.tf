@@ -2,7 +2,10 @@ variable "ubuntu-ami" {
   description = "default ubuntu ami"
   default     = "ami-0be057a22c63962cb"
 }
-
+variable "amazon-linux-ami" {
+  description = "default amazon linux ami"
+  default = "ami-0089b31e09ac3fffc"
+}
 variable "instance-type" {
   default = "t2.micro"
 }
@@ -26,5 +29,9 @@ variable "associate_public_ip_address" {
 
 variable "pem-key" {
   default = "ExampleInstance"
+  description = ""
+}
+
+variable "user_data" {
   description = ""
 }
