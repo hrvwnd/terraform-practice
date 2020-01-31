@@ -1,27 +1,35 @@
-variable "environment" {
-}
-
+#FRANCE
 variable "region" {
+
 }
 
-variable "access_key" {
-}
-variable "secret_key" {
+variable "shared_credentials_file" {
+
 }
 
+variable "environment" {
+
+} 
 variable "ami_id" {
+
+}
+
+variable "availability_zones" {
+    type        = list(string)
+    
 }
 
 provider "aws" {
     region = var.region
     version = "~> 2.7"
-    shared_credentials_file = "~/.aws/credential"
-    access_key = var.access_key
-    secret_key = var.secret_key
+    shared_credentials_file = var.shared_credentials_file
+
 }
+
 module "infrastructure" {
     source = "../../modules/infrastructure"
     environment = var.environment
     region = var.region
     ami_id = var.ami_id
+
 }
